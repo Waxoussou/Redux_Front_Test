@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Nav from './Components/Nav';
+import Body from './Components/Body';
+
 import './App.css';
 
 function App() {
+  const [router, setRouter] = useState({ current_page: 'default' })
+  const handleRouter = ({ target: { innerText: content } }) => {
+    // const { target: { innerText: content } } = e;
+
+    content === 'Accueil' ?
+      setRouter({ current_page: 'default' }) :
+      setRouter({ current_page: 'contact' })
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav handleRouter={handleRouter} />
+      <Body router={router} />
     </div>
   );
 }
