@@ -1,6 +1,7 @@
 import React from 'react';
 import LgSelector from './LgSelector';
 import { useSelector } from 'react-redux';
+import { showContentByCountry } from '../content/langUtils';
 
 const Welcome = () => {
     const lang = useSelector(state => state.langageReducer.current_langage);
@@ -10,7 +11,7 @@ const Welcome = () => {
             <LgSelector />
         </div>
         <div className="content">
-            {lang}
+            <h1>{showContentByCountry(lang, 'title')}</h1>
         </div>
     </div>
 }

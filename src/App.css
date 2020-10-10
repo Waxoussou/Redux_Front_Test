@@ -32,8 +32,23 @@
   padding: 0 10px;
 }
 
-.accueil .header {
-  /* width: 100%; */
+.accueil, .contact-section {
+  height: 100%;
+}
+
+.accueil .header, .contact-section .header {
   display: flex;
   justify-content: flex-end;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content h1 {
+  font-size: 3em;
+  color: rgb(0, 80, 80);
 }
