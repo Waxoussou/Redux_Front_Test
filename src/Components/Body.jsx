@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Contact from './Contact';
 import Welcome from './Welcome';
 
-const Body = ({router}) => {
+const Body = ({ router }) => {
 
     return <div className='main-content'>
         {router.current_page === 'default' ?
