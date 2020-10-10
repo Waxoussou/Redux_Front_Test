@@ -2,15 +2,18 @@
 // import { FETCH_POSTS, NEW_POST } from '../actions/types';
 
 const initialState = {
-    langage: 'FRENCH'
+    current_langage: 'EN'
 };
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case "TOGGLE_LANGAGE":
+        case "FR":
             return {
-                ...state,
-                langage: action.payload
+                current_langage: "FR"
+            };
+        case "EN":
+            return {
+                current_langage: "EN"
             };
         default:
             return state;
